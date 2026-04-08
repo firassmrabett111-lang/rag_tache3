@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Generated data
+fallahtech_rag/chroma_db/
+fallahtech_rag/raw_docs.json
+
+# System
+.DS_Store
+Thumbs.db
