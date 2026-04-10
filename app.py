@@ -1,4 +1,10 @@
 import streamlit as st
+import sys
+try:
+    __import__('pysqlite3')
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass
 import os
 import json
 import re
@@ -686,7 +692,9 @@ def main():
     init_rag()
 
     st.markdown('<div class="main-header">FallahTech SARL - Analyse RAG</div>', unsafe_allow_html=True)
+
     st.markdown('<div class="sub-header">Scoring Automatique du Dossier d\'Investissement Serie A | Pipeline RAG avec Groq LLM</div>', unsafe_allow_html=True)
+
 
     with st.sidebar:
         st.markdown("### Configuration RAG")
